@@ -22,7 +22,6 @@ jobs:
 
       - name: Deploy to AWS staging server
         run: |
-          cd DevOpsAssignment2_priceprediction
           python3 app.py
   notify:
     runs-on: ubuntu-latest
