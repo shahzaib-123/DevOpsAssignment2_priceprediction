@@ -1,0 +1,22 @@
+Defaulting to user installation because normal site-packages is not writeable
+Collecting flask
+  Downloading flask-3.0.0-py3-none-any.whl (99 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.7/99.7 kB 419.0 kB/s eta 0:00:00
+Collecting Werkzeug>=3.0.0 (from flask)
+  Downloading werkzeug-3.0.1-py3-none-any.whl (226 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.7/226.7 kB 1.2 MB/s eta 0:00:00
+Requirement already satisfied: Jinja2>=3.1.2 in /home/shahzaib/.local/lib/python3.10/site-packages (from flask) (3.1.2)
+Collecting itsdangerous>=2.1.2 (from flask)
+  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting click>=8.1.3 (from flask)
+  Downloading click-8.1.7-py3-none-any.whl (97 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 4.3 MB/s eta 0:00:00
+Collecting blinker>=1.6.2 (from flask)
+  Downloading blinker-1.7.0-py3-none-any.whl (13 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/shahzaib/.local/lib/python3.10/site-packages (from Jinja2>=3.1.2->flask) (2.1.1)
+Installing collected packages: Werkzeug, itsdangerous, click, blinker, flask
+  Attempting uninstall: Werkzeug
+    Found existing installation: Werkzeug 2.2.2
+    Uninstalling Werkzeug-2.2.2:
+      Successfully uninstalled Werkzeug-2.2.2
+Successfully installed Werkzeug-3.0.1 blinker-1.7.0 click-8.1.7 flask-3.0.0 itsdangerous-2.1.2
