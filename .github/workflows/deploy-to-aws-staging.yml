@@ -22,30 +22,31 @@ jobs:
 
       - name: Deploy to AWS staging server
         run: |
+          cd DevOpsAssignment2_priceprediction
           python3 app.py
-    notify:
-      runs-on: ubuntu-latest
-      needs: deploy
+  notify:
+    runs-on: ubuntu-latest
+    needs: deploy
 
-      steps:
-        - name: Send email notification on failure
-          if: failure()
-          uses: dawidd6/action-send-mail@v3
-          with:
-            server_address: smtp.gmail.com
-            server_port: 587
-            username: ${{ secrets.EMAIL_USERNAME }}
-            password: ${{ secrets.EMAIL_PASSWORD }}
-            subject: 'Deployment to AWS staging server failed'
-            body: 'The deployment to the AWS staging server has failed. Please check the logs for more information.'
+    steps:
+      - name: Send email notification on failure
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: 'Deployment to AWS staging server failed'
+          body: 'The deployment to the AWS staging server has failed. Please check the logs for more information.'
 
-        - name: Send email notification on success
-          if: success()
-          uses: dawidd6/action-send-mail@v3
-          with:
-            server_address: smtp.gmail.com
-            server_port: 587
-            username: ${{ secrets.EMAIL_USERNAME }}
-            password: ${{ secrets.EMAIL_PASSWORD }}
-            subject: 'Deployment to AWS staging server succeeded'
-            body: 'The deployment to the AWS staging server(52.90.227.195) has succeeded. You can access the deployed project at http://52.90.227.195.'
+      - name: Send email notification on success
+        if: success()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: 'Deployment to AWS staging server succeeded'
+          body: 'The deployment to the AWS staging server(52.90.227.195) has succeeded. You can access the deployed project at http://52.90.227.195.'
